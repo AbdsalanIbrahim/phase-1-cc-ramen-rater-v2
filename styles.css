@@ -1,102 +1,109 @@
-* {
+/* Reset some default styles */
+body, h3, h4, p {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
+  padding: 0;
 }
 
+/* Basic body styling */
 body {
-  padding: 1rem;
-  text-align: center;
-  background-color: #fafafa;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa; /* Light background color for better readability */
+  color: #333; /* Dark text for contrast */
+  line-height: 1.6; /* Improve readability */
 }
 
+/* Header styling */
 header {
-  padding: 0.5rem;
-  width: 100%;
+  background-color: #28a745; /* Green background for header */
   color: white;
-  background-color: black;
+  text-align: center;
+  padding: 1rem 0;
 }
 
+/* Ramen menu styling */
 #ramen-menu {
   display: flex;
-  overflow-x: auto;
-  margin: 1rem 0;
-  max-width: calc(100vw - 2rem);
+  flex-wrap: wrap; /* Allow ramen items to wrap */
+  justify-content: center; /* Center ramen items */
+  margin: 1rem; /* Margin around the menu */
 }
 
-#ramen-menu img {
-  flex: 0 1 auto;
-  height: 150px;
-  margin-right: 0.5rem;
-  cursor: pointer;
+/* Individual ramen item styling */
+.ramen-item {
+  margin: 10px; /* Space between items */
+  border: 1px solid #ccc; /* Light border around each item */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Ensure child elements don't overflow */
+  transition: transform 0.3s; /* Animation effect on hover */
 }
 
-#ramen-menu img:last-child {
-  margin-right: 0;
+.ramen-item img {
+  width: 150px; /* Set a standard width for images */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove bottom space */
 }
 
+.ramen-item:hover {
+  transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Ramen details section styling */
 #ramen-detail {
-  position: relative;
+  text-align: center; /* Center-align text */
+  margin: 20px; /* Margin for separation */
+  border: 1px solid #ccc; /* Light border */
+  padding: 1rem; /* Padding for spacing */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #fff; /* White background for contrast */
 }
 
-.detail-image {
-  height: 350px;
-}
-
-.name,
-.restaurant {
-  position: absolute;
-  left: 10px;
-  padding: 0.25rem 5rem 0.25rem 1rem;
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-.name {
-  bottom: 60px;
-}
-
-.restaurant {
-  bottom: 20px;
-}
-
+/* Form styling */
 form {
-  margin: 1rem 0;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  background-color: #fff; /* White background for forms */
+  border: 1px solid #ccc; /* Light border for forms */
+  border-radius: 8px; /* Rounded corners */
+  padding: 1rem; /* Padding for form elements */
+  margin: 1rem; /* Margin around the form */
 }
 
-input,
+label {
+  display: block; /* Block display for labels */
+  margin: 0.5rem 0 0.2rem; /* Margin for spacing */
+}
+
+input[type="text"],
+input[type="number"],
 textarea {
-  font-size: 1rem;
-  border: 1px solid black;
-  background-color: white;
-  padding: 0.5rem;
-  margin: 0.25rem 0;
-  width: 100%;
+  width: 100%; /* Full width inputs */
+  padding: 0.5rem; /* Padding for input elements */
+  margin-bottom: 1rem; /* Space below inputs */
+  border: 1px solid #ccc; /* Light border for inputs */
+  border-radius: 4px; /* Rounded corners for inputs */
 }
 
+/* Button styling */
 input[type="submit"] {
-  color: white;
-  border: 1px solid white;
-  background-color: black;
-  cursor: pointer;
-  transition: all 0.3s;
+  background-color: #28a745; /* Green background for buttons */
+  color: white; /* White text */
+  border: none; /* No border */
+  padding: 0.5rem 1rem; /* Padding for buttons */
+  border-radius: 4px; /* Rounded corners for buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition */
 }
 
-input[type="submit"]:active {
-  background-color: gray;
+input[type="submit"]:hover {
+  background-color: #218838; /* Darker green on hover */
 }
 
-form h4 {
-  width: 100%;
-  padding: 0.25rem;
-  margin: 0.5rem 0;
-  color: white;
-  background-color: black;
+/* Media query for responsiveness */
+@media (max-width: 600px) {
+  #ramen-menu {
+      flex-direction: column; /* Stack items on small screens */
+      align-items: center; /* Center items */
+  }
+
+  .ramen-item {
+      width: 90%; /* Make items take full width */
+  }
 }
